@@ -2,7 +2,7 @@ from turtle import Turtle
 import random
 
 # STARTING_POSITIONS = (480, 0)
-MOVE_DISTANCE = 40
+MOVE_DISTANCE = 20
 
 
 class Paddle(Turtle):
@@ -24,6 +24,8 @@ class Paddle(Turtle):
     def down(self):
         self.setheading(270)
         self.forward(MOVE_DISTANCE)
+
+
 
 
     # def heading(self):

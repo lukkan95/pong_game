@@ -1,7 +1,4 @@
 from turtle import Turtle
-import random
-
-STARTING_POSITION = [random.randint(-30, 30), random.randint(-210, -150)]
 
 
 class Ball(Turtle):
@@ -10,15 +7,25 @@ class Ball(Turtle):
         super().__init__()
         self.shape('circle')
         self.color("blue")
-        self.speed(30)
-        self.shapesize(stretch_len=1, stretch_wid=1)
+        self.speed(0)
         self.penup()
-        self.starting_move()
-
-    def starting_move(self):
-        print(STARTING_POSITION)
-        self.setheading(random.choice(STARTING_POSITION))
+        self.x_move = 10
+        self.y_move = 10
 
     def move(self):
-        self.forward(30)
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
+        self.goto(new_x, new_y)
+
+    def bounce_horizontally(self):
+        if self.y_move == 10:
+            self.y_move = -10
+        else:
+            self.y_move = 10
+
+    def bounce_vertically(self):
+        if self.x_move == 10:
+            self.x_move = -10
+        else:
+            self.x_move = 10
 
