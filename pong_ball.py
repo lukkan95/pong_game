@@ -29,3 +29,9 @@ class Ball(Turtle):
         else:
             self.x_move = 10
 
+    def go_home(self):
+        self.x_move = 10
+        self.y_move = 10
+        self.goto(self.x_move, self.y_move)
+
+
