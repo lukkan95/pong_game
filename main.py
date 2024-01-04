@@ -13,10 +13,11 @@ screen.bgcolor("black")
 screen.title("My Pong Game")
 screen.tracer()
 
+scoreboard = Scoreboard()
 paddle1 = Paddle((470, 0))
 paddle2 = Paddle((-470, 0))
 pong_ball = Ball()
-scoreboard = Scoreboard()
+
 
 screen.onkey(lambda: paddle1.up(), "Up")
 screen.onkey(lambda: paddle1.down(), "Down")

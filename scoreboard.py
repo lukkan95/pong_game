@@ -10,17 +10,28 @@ class Scoreboard(Turtle):
         super().__init__()
         self.current_score_1 = 0
         self.current_score_2 = 0
+        self.create_description()
         self.penup()
-        # self.write_dotted_line()
-        self.hideturtle()
-        self.goto(0, 200)
         self.color("white")
-        self.write(f"Score:\n{self.current_score_1}:{self.current_score_2}", move=False, align=ALIGNMENT, font=FONT)
+        self.speed("fastest")
+        self.hideturtle()
+        self.write_dotted_line()
+        self.goto(0, 210)
+        self.write(f"{self.current_score_1}:{self.current_score_2}", move=False, align=ALIGNMENT, font=FONT)
+
+    def create_description(self):
+        description = self
+        description.penup()
+        description.color("white")
+        description.speed("fastest")
+        description.hideturtle()
+        description.goto(0, 250)
+        description.write(f"Score", move=False, align=ALIGNMENT, font=FONT)
 
     def write_dotted_line(self):
-        self.penup()
         self.goto(0, -300)
-        for i in range(30):
+        self.left(90)
+        for i in range(26):
             self.pendown()
             self.forward(10)
             self.penup()
@@ -36,7 +47,7 @@ class Scoreboard(Turtle):
 
     def change_score(self):
         self.clear()
-        self.write(f"Score: \n{self.current_score_1}:{self.current_score_2}", move=False, align=ALIGNMENT, font=FONT)
+        self.write(f"{self.current_score_1}:{self.current_score_2}", move=False, align=ALIGNMENT, font=FONT)
 
     def game_over(self):
         self.hideturtle()
